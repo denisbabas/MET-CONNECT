@@ -9,10 +9,6 @@ import org.openqa.selenium.support.PageFactory;
 import testBase.BaseClass;
 
 public class RunPageElements extends BaseClass {
-
-	//not working!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-	@FindBy (xpath = "//*[text()='RUN']")
-	public WebElement testButton;
 	
 	@FindBy (id = "Play")
 	public WebElement launchProcedure;
@@ -33,13 +29,25 @@ public class RunPageElements extends BaseClass {
 	public WebElement textField2;
 						
 	
+/**
+ * Elements from Post-Prompt
+ */
 	
-	//input[@name='myName']
-//	@FindBy (xpath = "//*[text()='RUN']")
-//	public WebElement testButton;
-//	
-//	@FindBy (xpath = "//*[text()='RUN']")
-//	public WebElement testButton;
+	@FindBy (id = "PromptText")
+	public WebElement notesTextField;
+	
+	
+	@FindBy (className = "ComboBox")
+	public WebElement assFoundAssLeftDD;
+	
+	/**
+	 * END Elements from Post-Prompt
+	 */
+	
+	
+
+	@FindBy (className = "TextBlock")
+	public WebElement textFromInfoPage;
 //	
 //	
 //	@FindBy (xpath = "//*[text()='RUN']")

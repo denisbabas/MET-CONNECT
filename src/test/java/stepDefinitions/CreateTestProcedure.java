@@ -7,6 +7,7 @@ import java.awt.Robot;
 import java.awt.event.KeyEvent;
 
 import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 import io.cucumber.java.en.Then;
@@ -111,9 +112,6 @@ public class CreateTestProcedure extends CommonMethods {
 		
 		for (WebElement textField : runPageElements.textField) {
 			 
-			
-			 
-			 textField.click();
 			 textField.sendKeys(humidity);
 			 
 			 Robot rb = new Robot();
@@ -123,52 +121,31 @@ public class CreateTestProcedure extends CommonMethods {
 	     
 		CommonMethods.sendKeys(runPageElements.textField2, temperature);
 			CommonMethods.click(runPageElements.okButton);
+			CommonMethods.click(runPageElements.okButton);
 	}
-
-	@Then("click advance button on Test information1 screen")
-	public void click_advance_button_on_Test_information1_screen() {
+	@Then("on the Post-Prompt screen select {string} dropdown and enter {string} to the textbox")
+	public void on_the_Post_Prompt_screen_select_dropdown_and_enter_to_the_textbox(String asFoundAsLeft, String notes) {
+		
+		runPageElements.assFoundAssLeftDD.click();
+		runPageElements.assFoundAssLeftDD.findElement(By.name(asFoundAsLeft)).click(); //DD SELECT!!!
+		CommonMethods.sendKeys(runPageElements.notesTextField, notes);
+		 CommonMethods.click(runPageElements.okButton);
+	}
 	
+	@Then("get text from the MetCal Information and asssert {string}")
+	public void get_text_from_the_Met_call_Information_and_asssert(String text) {
+		
+		Assert.assertTrue(runPageElements.textFromInfoPage.getAttribute("Name").contains(text));
+	
+		
+				
+
+
+CommonMethods.click(runPageElements.okButton);
 	}
 
-	@Then("click advance button on Test information2 screen")
-	public void click_advance_button_on_Test_information2_screen() {
-	    
-	}
 
-	@Then("click advance button on Test information3 screen")
-	public void click_advance_button_on_Test_information3_screen() {
-	     
-	    
-	}
-
-	@Then("click advance button on Test information4 screen")
-	public void click_advance_button_on_Test_information4_screen() {
-	     
-
-	}
-
-	@Then("click advance button on Test information5 screen")
-	public void click_advance_button_on_Test_information5_screen() {
-	   
-	}
-
-	@Then("click advance button on Test information6 screen")
-	public void click_advance_button_on_Test_information6_screen() {
-	     
-	 
-	}
-
-	@Then("click advance button on Test information7 screen")
-	public void click_advance_button_on_Test_information7_screen() {
-	     
-	    
-	}
-
-	@Then("click advance button on Test information8 screen")
-	public void click_advance_button_on_Test_information8_screen() {
-	     
-	    
-	}
+	
 
 	@Then("click ok button on the Please Remove All connection screen")
 	public void click_ok_button_on_the_Please_Remove_All_connection_screen() {

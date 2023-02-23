@@ -13,19 +13,10 @@ Feature: setUp procedure
     And navigate to the Run window and click run button
     Then enter "<WorkOrderNumber>" click ok button
     Then enter "<Temperature>" and "<Hunidity>" and click ok button
-    
-    
-    
-    And click advance button on Test information1 screen
-    And click advance button on Test information2 screen
-    And click advance button on Test information3 screen
-    And click advance button on Test information4 screen
-    And click advance button on Test information5 screen
-    And click advance button on Test information6 screen
-    And click advance button on Test information7 screen
-    And click advance button on Test information8 screen
-    Then click ok button on the Please Remove All connection screen
+    And on the Post-Prompt screen select "<As-Found/As-Left>" dropdown and enter "<Notes>" to the textbox
+    And get text from the MetCal Information and asssert "<How exported data>"
+
 
     Examples: 
-      | windows name | Asset Number        | PXE           | WorkOrderNumber      | Temperature | Hunidity |
-      | Asset Number | AutomationTestAsset | z540_Proc.pxe | AutomatedIDworkOrder |          77 |       37 |
+      | windows name | Asset Number        | PXE           | WorkOrderNumber      | Temperature | Hunidity | As-Found/As-Left | Notes                       | How exported data          |
+      | Asset Number | AutomationTestAsset | z540_Proc.pxe | AutomatedIDworkOrder |          77 |       37 | As-Found         | This is automated test note | Data exported successfully |
