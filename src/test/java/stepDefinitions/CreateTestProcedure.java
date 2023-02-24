@@ -34,8 +34,8 @@ public class CreateTestProcedure extends CommonMethods {
 	@Then("verify the {string}")
 	public void verify_the(String windowName) {
 		
-		String a = setUpPageElements.assetNumberWindHeader.getAttribute("Name");
-		Assert.assertEquals(windowName, a);
+		
+		Assert.assertEquals(windowName, setUpPageElements.assetNumberWindHeader.getAttribute("Name"));
 		
 	}
 	@Then("enter the {string} and click ok button")

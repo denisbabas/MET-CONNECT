@@ -48,21 +48,7 @@ public class RunPageElements extends BaseClass {
 
 	@FindBy (className = "TextBlock")
 	public WebElement textFromInfoPage;
-//	
-//	
-//	@FindBy (xpath = "//*[text()='RUN']")
-//	public WebElement testButton;
-//	
-//	@FindBy (xpath = "//*[text()='RUN']")                ////*[contains(text(),  'Humidity')]"
-//	public WebElement testButton;							
-//														//pane[@name='Humidity']/following-sibling::edit[@className='TextBoX']"));
-//	@FindBy (xpath = "//*[text()='RUN']")
-//	public WebElement testButton;
-	
-	
-	//button[contains(text()
-	//*[@id='elementId'][2]"
-	//[@id='myElement'][2]
+
 	
 	
 public RunPageElements() {

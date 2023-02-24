@@ -43,7 +43,7 @@ public class BaseClass {
 	
 	public static void tearDown() {
 		if (driver != null) {
-			//driver.quit();
+			driver.quit();
 		
 		
 		}

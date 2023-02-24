@@ -1,8 +1,8 @@
 Feature: setUp procedure
 
-  @Progression
+  @Smoke
   Scenario Outline: Create
-    Given Open METCAL Runtime and entel valid login and password
+     Given Open METCAL Runtime and enter valid login and password for MC user
     Then Click on the LogIn button
     And move slider to simulation mode
     And click on the Select DUT button
