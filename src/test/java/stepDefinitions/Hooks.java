@@ -11,6 +11,7 @@ public class Hooks {
 	@Before
 	public void startTest() throws Exception  {
 		BaseClass.setUp();
+		
 		System.out.println("Starting Test Execution...");
 	}
 	

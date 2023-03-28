@@ -1,8 +1,8 @@
-Feature: setUp procedure
+Feature: 	SetUp procedure
 
   @Smoke
   Scenario Outline: Create
-     Given Open METCAL Runtime and enter valid login and password for MC user
+    Given Open METCAL Runtime and enter valid login and password for MC user
     Then Click on the LogIn button
     And move slider to simulation mode
     And click on the Select DUT button
@@ -16,7 +16,6 @@ Feature: setUp procedure
     And on the Post-Prompt screen select "<As-Found/As-Left>" dropdown and enter "<Notes>" to the textbox
     And get text from the MetCal Information and asssert "<How exported data>"
 
-
     Examples: 
-      | windows name | Asset Number        | PXE           | WorkOrderNumber      | Temperature | Hunidity | As-Found/As-Left | Notes                       | How exported data          |
-      | Asset Number | AutomationTestAsset | z540_Proc.pxe | AutomatedIDworkOrder |          77 |       37 | As-Found         | This is automated test note | Data exported successfully |
+      | windows name | Asset Number        | PXE       | WorkOrderNumber      | Temperature | Hunidity | As-Found/As-Left | Notes                       | How exported data           |
+      | Asset Number | AutomationTestAsset | z540_Proc | AutomatedIDworkOrder |          77 |       37 | As-Found         | This is automated test note | Data exported successfully: |

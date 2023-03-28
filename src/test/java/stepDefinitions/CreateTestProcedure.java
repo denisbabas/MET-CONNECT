@@ -9,10 +9,11 @@ import java.awt.event.KeyEvent;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 
 import io.cucumber.java.en.Then;
 import utils.CommonMethods;
-import utils.ConfigsReader;
+
 
 public class CreateTestProcedure extends CommonMethods {
 	@Then("move slider to simulation mode")
@@ -28,6 +29,7 @@ public class CreateTestProcedure extends CommonMethods {
 
 	@Then("click on the Select DUT button")
 	public void click_on_the_Select_DUT_button() throws Throwable {
+		
 		CommonMethods.click(setUpPageElements.selectAssetViaUIButton);
 	   
 	}
@@ -57,12 +59,6 @@ public class CreateTestProcedure extends CommonMethods {
 	@Then("select {string} from the PC")
 	public void select_from_the_PC(String pxe)  throws Throwable {
 		click(setUpPageElements.selectPXT);
-		
-	
-		selectProcedureExecutablePageElements.pathField.sendKeys(ConfigsReader.getPropValue("folderWithPXE"));
-		
-		Robot rb = new Robot();
-		rb.keyPress(KeyEvent.VK_ENTER);
 
 		int count = selectProcedureExecutablePageElements.LISTs.size();
 		System.out.println("Found " + count + " elements in the list");
@@ -75,28 +71,19 @@ public class CreateTestProcedure extends CommonMethods {
 	  
 	     
 	        	if (element.getAttribute("Name").equals(pxe)) {
-	           
-	        
-	          System.out.println("Found matching element: " + element.getAttribute("Name"));
-	            element.click();
-	          
-	            break;
-	        }
-	    }CommonMethods.click(selectProcedureExecutablePageElements.openButton);
-	    
-	    
-	   
+	        		 System.out.println("Found matching element: " + element.getAttribute("Name"));
+	        		Actions act = new Actions(driver);
+	        		act.doubleClick(element).perform();
+	            break;} }
  
 	}
 
 	@Then("navigate to the Run window and click run button")
-	public void navigate_to_the_Run_window_and_click_run_button() throws AWTException {
+	public void navigate_to_the_Run_window_and_click_run_button() throws AWTException{
+		
 		Robot robot = new Robot();
 		robot.keyPress(KeyEvent.VK_CONTROL);
 		robot.keyPress(KeyEvent.VK_TAB);
-		robot.keyRelease(KeyEvent.VK_TAB);
-		robot.keyRelease(KeyEvent.VK_CONTROL);
-		
 		runPageElements.launchProcedure.click();
 		}
 	@Then("enter {string} click ok button")
@@ -133,24 +120,16 @@ public class CreateTestProcedure extends CommonMethods {
 	}
 	
 	@Then("get text from the MetCal Information and asssert {string}")
-	public void get_text_from_the_Met_call_Information_and_asssert(String text) {
-		
+	public void get_text_from_the_Met_call_Information_and_asssert(String text  ) {
+	System.out.println(runPageElements.textFromInfoPage.getAttribute("Name") + "this is text");
 		Assert.assertTrue(runPageElements.textFromInfoPage.getAttribute("Name").contains(text));
 	
 		
 				
 
 
-CommonMethods.click(runPageElements.okButton);
+CommonMethods.click(runPageElements.noButton);
 	}
-
-
-	
-
-	@Then("click ok button on the Please Remove All connection screen")
-	public void click_ok_button_on_the_Please_Remove_All_connection_screen() {
-	     
-	    	}
 
 
 

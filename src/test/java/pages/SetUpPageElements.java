@@ -32,8 +32,24 @@ public class SetUpPageElements extends BaseClass{
 	@FindBy (name ="Save")
 	public WebElement saveButton;
 	
+	
+	@FindBy (name =  "SETUP")
+	public WebElement setupButton;
+	
+	@FindBy (name = "CONFIGURE")
+	public WebElement configureButton;
+	
 	@FindBy(id = "BtnSelectProcedureDropDown")
 	public WebElement selectPXT;
+	
+	@FindBy (name = "APPLY")
+	public WebElement applyButton;
+
+	@FindBy (name = "CONFIGURE")
+	public WebElement textFromConfugureTab ;
+	
+	@FindBy (name = "RUN")
+	public WebElement textFromRunTab;
 	
 	
 	public SetUpPageElements() {

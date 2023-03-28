@@ -1,49 +1,49 @@
 package testBase;
 
 
+import java.io.File;
+import java.io.IOException;
 import java.net.URL;
+import java.util.concurrent.TimeUnit;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.winium.DesktopOptions;
 import org.openqa.selenium.winium.WiniumDriver;
+import org.openqa.selenium.winium.WiniumDriverService;
 
 import utils.ConfigsReader;
 import utils.Constants;
 
 public class BaseClass {
 
-	public static WebDriver driver;
+	public static WiniumDriver driver;
 	public static DesktopOptions options;
 	public static WebDriverWait wait;
 	
 	 
 	
-	public static void setUp()  throws Exception {
+	public static void setUp() throws IOException {
 
+		
 		ConfigsReader.readProperties(Constants.CONFIGURATION_FILEPATH);
-
-		 options = new DesktopOptions();
-	
-		 options.setApplicationPath(ConfigsReader.getPropValue("app.exe"));
 		
-		 
-		 driver = new WiniumDriver(new URL("http://localhost:9999"), options);
-		// driver.manage().timeouts().implicitlyWait(Constants.IMPLICIT_WAIT_TIME, TimeUnit.SECONDS);
+		String winiumPath = Constants.WINIUM_DesctopDriver; 
+		String appPath = ConfigsReader.getPropValue("app.exe");
+	    DesktopOptions options = new DesktopOptions();
+	    options.setApplicationPath(appPath);
+	    File driverPath = new File(winiumPath);
+	    WiniumDriverService service = new WiniumDriverService.Builder().usingDriverExecutable(driverPath).usingPort(9999).buildDesktopService();
+	        service.start();
+	        driver = new WiniumDriver(service, options);
+	        
+	       // wait = new WebDriverWait(driver, Constants.IMPLICIT_WAIT_TIME);
+	        PageInitializer.initializePageObjects();
+	    }
 		
-	        //wait = new WebDriverWait(driver, 15);
-		
-	     
-		 PageInitializer.initializePageObjects();
-		 
-		
-		 
-		 
-    }
 	
 	public static void tearDown() {
 		if (driver != null) {
-			driver.quit();
+		driver.quit();
 		
 		
 		}

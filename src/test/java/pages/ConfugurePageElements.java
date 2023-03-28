@@ -9,8 +9,8 @@ import testBase.BaseClass;
 public class ConfugurePageElements extends BaseClass {
 
 
-	
-	
+	@FindBy (name = "Instrument Configuration")
+	public WebElement instrimentConfigurationMenu;
 	
 	
 	public ConfugurePageElements() {

@@ -14,6 +14,8 @@ public class SelectProcedureExecutablePageElements extends BaseClass{
 	@FindBy (xpath ="//*[@ControlType='ControlType.ListItem']")
 	public List<WebElement> LISTs;
 	
+	
+	
 	@FindBy (name = "Line down")
 	public WebElement sliderDownBottom;
 	

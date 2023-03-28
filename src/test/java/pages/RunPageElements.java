@@ -49,6 +49,9 @@ public class RunPageElements extends BaseClass {
 	@FindBy (className = "TextBlock")
 	public WebElement textFromInfoPage;
 
+
+	@FindBy (name = "No")
+	public WebElement noButton;
 	
 	
 public RunPageElements() {

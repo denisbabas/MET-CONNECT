@@ -32,6 +32,24 @@ public class CommonMethods extends PageInitializer {
 	public static void click(WebElement element) {
 		element.click();
 	}
+	/**
+	 * This method replace all characters except Alphabets
+	 * @param yourValue
+	 */
+	public static String getAlphabeticAharactersOnly(String yourValue) {
+		return yourValue.replaceAll("[^a-zA-Z", "");
+	}
+	
+	/**
+	 * 
+	 * @param This method replace all characters except Numbers;
+	 * @return
+	 */
+	
+	public static String getNumChrtr(String yourValue) {
+		return yourValue.replaceAll("[^0-9]", "");
+	}
+	
 	
 	/**
 	 * Use this method in need of entering value to a text box through selenium
@@ -114,6 +132,8 @@ public class CommonMethods extends PageInitializer {
 			return false;
 		}
 	}
+	
+
 	
 	/**
 	 * This method will determine if the element is enabled or disabled.
@@ -226,74 +246,10 @@ public class CommonMethods extends PageInitializer {
 		}
 
 	}
-	/**
-	 *by WebElement switch
-	 * @param iFrame
-	 */
-	public static void swithToFrame(WebElement iFrame) {
-		try {
-			driver.switchTo().frame(iFrame);
-			
-		}catch(NoSuchFrameException  e){
-			e.printStackTrace();
-		}
-	}
-	
-	/**
-	 * ByIndex switch
-	 * @param frameIndex
-	 */
-	
-	public static void swithToFrame(int frameIndex) {
-		try {
-			driver.switchTo().frame(frameIndex);
-			
-		}catch(NoSuchFrameException  e){
-			e.printStackTrace();
-		}
-	}
-	/**
-	 * By name or Id switch
-	 * @param nameOrId
-	 */
-	public static void swithToFrame(String  nameOrId) {
-		try {
-			driver.switchTo().frame(nameOrId);
-			
-		}catch(NoSuchFrameException  e){
-			e.printStackTrace();
-		}
-	}
-	/**
-	 * 
-	 * this method will switch to child window
-	 */
-	public static void switchToChildWindow() {
-		String mainWindow = driver.getWindowHandle();
-	Set<String> allWindows = driver.getWindowHandles();
-	for (String window : allWindows) {
-		if(!window.equals(mainWindow)) {
-			driver.switchTo().window(window);
-			break;
-	   }
-	  }
+
 	
 	
-	 }
 	
-	/**
-	 * This Method read JsonFile
-	 */
-	static String jsonFile;
-	public static  String readJson(String fileName) {
-		try {
-			jsonFile = new String(Files.readAllBytes(Paths.get(fileName)));
-		}
-		catch (IOException e) {
-			e.printStackTrace();
-		}
-		return jsonFile;
-	}
 	
 
 	
