@@ -4,6 +4,7 @@ import org.junit.Assert;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import utils.CommonMethods;
 import utils.ConfigsReader;
 
@@ -52,9 +53,14 @@ public class LoginScreenTestDefinitions extends CommonMethods{
         Assert.assertNull(element1);
         Assert.assertNull(element2);
 }
-	
-	
-	
-	
+	@Given("Open METCAL Runtime and click Help button")
+	public void open_METCAL_Runtime_and_click_Help_button() {
+	  loginPageElements.helpButton.click();
+	}
+
+	@Then("Verify header {string} on help page is shows for the user")
+	public void verify_header_on_help_page_is_shows_for_the_user(String string) {
+	   Assert.assertEquals(string,  loginPageElements.headerFromHelpPage.getAttribute("Name"));
+	}
 
 }

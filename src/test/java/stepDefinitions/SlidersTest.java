@@ -102,8 +102,8 @@ public class SlidersTest extends CommonMethods{
 		setUpPageElements.applyButton.click();
 	}
 		
-	@Then("Verify Invalid settingd {string} message is displayed")
-	public void verify_Invalid_settingd_message_is_displayed(String string) {
+	@Then("Verify Invalid setting {string} message is displayed")
+	public void verify_Invalid_setting_message_is_displayed(String string) {
 		Assert.assertTrue(instrumentConfigurationPageElements.textFromErrorWindow.getAttribute("Name").contains(string));
 	
 	}

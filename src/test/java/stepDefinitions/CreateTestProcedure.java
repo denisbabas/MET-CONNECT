@@ -61,7 +61,7 @@ public class CreateTestProcedure extends CommonMethods {
 		click(setUpPageElements.selectPXT);
 
 		int count = selectProcedureExecutablePageElements.LISTs.size();
-		System.out.println("Found " + count + " elements in the list");
+		
 	
 		for (int i = 0; i < count; i++) {
 			

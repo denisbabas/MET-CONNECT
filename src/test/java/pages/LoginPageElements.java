@@ -21,6 +21,17 @@ public class LoginPageElements extends BaseClass {
 		@FindBy (name ="Log In")
 		public WebElement logInButton;
 		
+		@FindBy (id = "btnHelp")
+		public WebElement helpButton;
+		
+		@FindBy (name = "MET/CONNECT Overview")
+		public WebElement headerFromHelpPage;
+		
+		@FindBy (name = "Cancel")
+		public WebElement cancelButton;
+		
+		@FindBy(name = "MET/CAL™")
+		public WebElement headerFromLoginPage;
 		
 		public LoginPageElements() {
 			
