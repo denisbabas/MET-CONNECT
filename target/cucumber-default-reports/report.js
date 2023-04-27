@@ -31,6 +31,10 @@ formatter.step({
   "keyword": "And "
 });
 formatter.step({
+  "name": "Click Help button and verify help page is opened assert \"\u003cHeader\u003e\" and click ok button",
+  "keyword": "Then "
+});
+formatter.step({
   "name": "Verify Channel A and Channel B barcode fields are disabled",
   "keyword": "Then "
 });
@@ -39,7 +43,11 @@ formatter.step({
   "keyword": "Then "
 });
 formatter.step({
-  "name": "Verify Pover Sensors Drop Down is enabled for Chanel A and Chanel B",
+  "name": "Verify Power Sensors Drop Down is enabled for Chanel A and Chanel B",
+  "keyword": "And "
+});
+formatter.step({
+  "name": "Verify Power Sensors Drop Down is disabled for Chanel C and Chanel D",
   "keyword": "And "
 });
 formatter.step({
@@ -47,7 +55,7 @@ formatter.step({
   "keyword": "And "
 });
 formatter.step({
-  "name": "Verify Pover Sensors Drop Down is enabled for Chanel A and Chanel B",
+  "name": "Verify Power Sensors Drop Down is enabled for Chanel C and Chanel D",
   "keyword": "And "
 });
 formatter.step({
@@ -71,24 +79,24 @@ formatter.step({
   "keyword": "Then "
 });
 formatter.step({
-  "name": "Delete one power sensor from Channel A by clicking {string} button and Verify power sensor dropdowns are enabled for all channels",
+  "name": "Delete one power sensor from Channel A by clicking minus button and Verify power sensor dropdowns are enabled for all channels",
   "keyword": "And "
-});
-formatter.step({
-  "name": "Click Help button and verify help page is opened assert header {string} and click ok button",
-  "keyword": "Then "
 });
 formatter.step({
   "name": "Click ok button",
-  "keyword": "And "
+  "keyword": "Then "
 });
 formatter.step({
   "name": "Verify \"Agilent N1914A\" is present on the instrument page",
   "keyword": "Then "
 });
 formatter.step({
-  "name": "Click on the instrument and click Delete button and verify instrument succesfully deleted",
+  "name": "Click on the instrument and click Delete button",
   "keyword": "And "
+});
+formatter.step({
+  "name": "click Yes button on the Confirm window and verify instrument \"Agilent N1914A\" succesfully deleted",
+  "keyword": "Then "
 });
 formatter.examples({
   "name": "",
@@ -99,14 +107,14 @@ formatter.examples({
       "cells": [
         "FSC",
         "Barcode",
-        ""
+        "Header"
       ]
     },
     {
       "cells": [
         "IEEE, EPM, SCPI",
         "TestBarcode",
-        ""
+        "System Instrument Dialog"
       ]
     }
   ]
@@ -165,6 +173,16 @@ formatter.result({
   "status": "passed"
 });
 formatter.step({
+  "name": "Click Help button and verify help page is opened assert \"System Instrument Dialog\" and click ok button",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "stepDefinitions.ConfigureAgilentN1914Atest.click_Help_button_and_verify_help_page_is_opened_assert_and_click_ok_button(java.lang.String)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
   "name": "Verify Channel A and Channel B barcode fields are disabled",
   "keyword": "Then "
 });
@@ -185,12 +203,24 @@ formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "Verify Pover Sensors Drop Down is enabled for Chanel A and Chanel B",
+  "name": "Verify Power Sensors Drop Down is enabled for Chanel A and Chanel B",
   "keyword": "And "
 });
-formatter.match({});
+formatter.match({
+  "location": "stepDefinitions.ConfigureAgilentN1914Atest.verify_Power_Sensors_Drop_Down_is_enabled_for_Chanel_A_and_Chanel_B()"
+});
 formatter.result({
-  "status": "undefined"
+  "status": "passed"
+});
+formatter.step({
+  "name": "Verify Power Sensors Drop Down is disabled for Chanel C and Chanel D",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepDefinitions.ConfigureAgilentN1914Atest.verify_Power_Sensors_Drop_Down_is_disabled_for_Chanel_C_and_Chanel_D()"
+});
+formatter.result({
+  "status": "passed"
 });
 formatter.step({
   "name": "select USB Ports check box",
@@ -200,15 +230,17 @@ formatter.match({
   "location": "stepDefinitions.ConfigureAgilentN1914Atest.select_USB_Ports_check_box()"
 });
 formatter.result({
-  "status": "skipped"
+  "status": "passed"
 });
 formatter.step({
-  "name": "Verify Pover Sensors Drop Down is enabled for Chanel A and Chanel B",
+  "name": "Verify Power Sensors Drop Down is enabled for Chanel C and Chanel D",
   "keyword": "And "
 });
-formatter.match({});
+formatter.match({
+  "location": "stepDefinitions.ConfigureAgilentN1914Atest.verify_Power_Sensors_Drop_Down_is_enabled_for_Chanel_C_and_Chanel_D()"
+});
 formatter.result({
-  "status": "undefined"
+  "status": "passed"
 });
 formatter.step({
   "name": "Verify + buttons for all channels are enabled and - buttons for all channels are disabled",
@@ -218,7 +250,7 @@ formatter.match({
   "location": "stepDefinitions.ConfigureAgilentN1914Atest.verify_buttons_for_all_channels_are_enabled_and_buttons_for_all_channels_are_disabled()"
 });
 formatter.result({
-  "status": "skipped"
+  "status": "passed"
 });
 formatter.step({
   "name": "Verify Barcode fields for all channels are disabled and Asset Info buttons are disabled for all channels Barcode fields",
@@ -228,7 +260,7 @@ formatter.match({
   "location": "stepDefinitions.ConfigureAgilentN1914Atest.verify_Barcode_fields_for_all_channels_are_disabled_and_Asset_Info_buttons_are_disabled_for_all_channels_Barcode_fields()"
 });
 formatter.result({
-  "status": "skipped"
+  "status": "passed"
 });
 formatter.step({
   "name": "Select any power sensor for Channel A and Verify Barcode field for that sensor is enabled",
@@ -238,7 +270,7 @@ formatter.match({
   "location": "stepDefinitions.ConfigureAgilentN1914Atest.select_any_power_sensor_for_Channel_A_and_Verify_Barcode_field_for_that_sensor_is_enabled()"
 });
 formatter.result({
-  "status": "skipped"
+  "status": "passed"
 });
 formatter.step({
   "name": "Enter barcode for that sensor and Verify corresponding Asset Info button is enabled",
@@ -248,7 +280,7 @@ formatter.match({
   "location": "stepDefinitions.ConfigureAgilentN1914Atest.enter_barcode_for_that_sensor_and_Verify_corresponding_Asset_Info_button_is_enabled()"
 });
 formatter.result({
-  "status": "skipped"
+  "status": "passed"
 });
 formatter.step({
   "name": "Select all available power sensors for Channel A with their barcodes and Verify power sensor dropdowns are disabled for Channel B, C and D",
@@ -258,37 +290,27 @@ formatter.match({
   "location": "stepDefinitions.ConfigureAgilentN1914Atest.select_all_available_power_sensors_for_Channel_A_with_their_barcodes_and_Verify_power_sensor_dropdowns_are_disabled_for_Channel_B_C_and_D()"
 });
 formatter.result({
-  "status": "skipped"
+  "status": "passed"
 });
 formatter.step({
-  "name": "Delete one power sensor from Channel A by clicking {string} button and Verify power sensor dropdowns are enabled for all channels",
+  "name": "Delete one power sensor from Channel A by clicking minus button and Verify power sensor dropdowns are enabled for all channels",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepDefinitions.ConfigureAgilentN1914Atest.delete_one_power_sensor_from_Channel_A_by_clicking_button_and_Verify_power_sensor_dropdowns_are_enabled_for_all_channels()"
+  "location": "stepDefinitions.ConfigureAgilentN1914Atest.delete_one_power_sensor_from_Channel_A_by_clicking_minus_button_and_Verify_power_sensor_dropdowns_are_enabled_for_all_channels()"
 });
 formatter.result({
-  "status": "skipped"
-});
-formatter.step({
-  "name": "Click Help button and verify help page is opened assert header {string} and click ok button",
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "stepDefinitions.ConfigureAgilentN1914Atest.click_Help_button_and_verify_help_page_is_opened_assert_header_and_click_ok_button()"
-});
-formatter.result({
-  "status": "skipped"
+  "status": "passed"
 });
 formatter.step({
   "name": "Click ok button",
-  "keyword": "And "
+  "keyword": "Then "
 });
 formatter.match({
   "location": "stepDefinitions.ConfigureAgilentN1914Atest.click_ok_button()"
 });
 formatter.result({
-  "status": "skipped"
+  "status": "passed"
 });
 formatter.step({
   "name": "Verify \"Agilent N1914A\" is present on the instrument page",
@@ -298,17 +320,27 @@ formatter.match({
   "location": "stepDefinitions.ConfigureAgilentN1914Atest.verify_is_present_on_the_instrument_page(java.lang.String)"
 });
 formatter.result({
-  "status": "skipped"
+  "status": "passed"
 });
 formatter.step({
-  "name": "Click on the instrument and click Delete button and verify instrument succesfully deleted",
+  "name": "Click on the instrument and click Delete button",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepDefinitions.ConfigureAgilentN1914Atest.click_on_the_instrument_and_click_Delete_button_and_verify_instrument_succesfully_deleted()"
+  "location": "stepDefinitions.ConfigureAgilentN1914Atest.click_on_the_instrument_and_click_Delete_button()"
 });
 formatter.result({
-  "status": "skipped"
+  "status": "passed"
+});
+formatter.step({
+  "name": "click Yes button on the Confirm window and verify instrument \"Agilent N1914A\" succesfully deleted",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "stepDefinitions.ConfigureAgilentN1914Atest.click_Yes_button_on_the_Confirm_window_and_verify_instrument_succesfully_deleted(java.lang.String)"
+});
+formatter.result({
+  "status": "passed"
 });
 formatter.embedding("image/png", "embedded0.png", "System instrument test part two (Agilent N1914A)");
 formatter.after({

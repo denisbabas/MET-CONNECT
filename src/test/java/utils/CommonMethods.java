@@ -297,11 +297,11 @@ public class CommonMethods extends PageInitializer {
 		}
 	}
 
-	public static void clickThenSelectOptionFromDropdownByText(WebElement valueClick, List<WebElement> values,
-			String value) {
+	public static void clickThenSelectOptionFromDropdownByText(WebElement valueClick, List<WebElement> values,String value) {
 		valueClick.click();
 		for (WebElement dropDownValues : values) {
 			if (dropDownValues.getAttribute("Name").equals(value)) {
+				System.out.println(dropDownValues.getAttribute("Name").toString() + " This is");
 				dropDownValues.click();
 				break;
 			}

@@ -99,10 +99,59 @@ public class InstrumentsPageElements extends BaseClass {
 
 	@FindBy(xpath= "//*[@ClassName='TextBlock']")
 	public List<WebElement>listAliases;
-	//this element from the Instrument Alias window
+	
+	
+	@FindBy (id = "assetNumber")
+	public List<WebElement> BurcodeNumberTextFieldList;
+	
 	
 
+	@FindBy (id = "cmboModGroupAsset1:None")
+	public List<WebElement>powerSensorListDD ;
+
+	@FindBy(name = "Option 103, 105, 106, 108, 109, or 167")
+	public WebElement USBportCheckBox;
 	
+	@FindBy(name = "+")
+	public List<WebElement> plusButton;
+	
+	@FindBy(name = "-")
+	public List<WebElement> minusButton;
+	
+	
+
+	@FindBy (id = "assetNumBtn")
+	public List<WebElement>assetNumBtn;
+	
+	
+	@FindBy(name = "Agilent E4412A")
+	public WebElement AgilentE4412A;
+	                 
+	@FindBy (xpath = "//*[starts-with(@Name, 'Agilent E930')]")
+	public WebElement AgilentList;
+	
+	
+	@FindBy (name = "Help")
+	public WebElement helpButton;
+	
+	//this element from the "Help" page
+	@FindBy (name = "System Instrument Dialog")
+	public WebElement systemInstrumentDialogHeader;
+	
+	
+	@FindBy (name = "Close")
+	public WebElement closeButton;
+	
+	@FindBy (id = "lstConfiguredInstruments")
+	public List<WebElement> listConfiguredInstruments;
+	
+	@FindBy(name= "OK")
+	public WebElement okButtonMain;
+	
+	
+	//this element from the "Confirm" deleting page
+	@FindBy(name= "_Yes")
+	public WebElement yesButton;
 	
 	public InstrumentsPageElements() {
 		
