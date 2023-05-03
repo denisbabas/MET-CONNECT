@@ -8,6 +8,7 @@ import pages.InstrumentsPageElements;
 import pages.LoginPageElements;
 import pages.MetrologyPageElements;
 import pages.PostTestDialogPageElements;
+import pages.RecurringElemets;
 import pages.ResultsPageElements;
 import pages.RunPageElements;
 import pages.RuntimeConfigurationPageElements;
@@ -36,6 +37,7 @@ public class PageInitializer extends BaseClass {
 	protected static InstrumentsPageElements instrumentsPageElements;
 	protected static FileAndFoldersPageElements fileAndFoldersPageElements;
 	protected static InstrumentControlPageElements instrumentControlPageElements;
+	protected static RecurringElemets recurringElemets;
 	
 	public static void initializePageObjects() {
 		selectProcedureExecutablePageElements = new SelectProcedureExecutablePageElements();
@@ -54,5 +56,6 @@ public class PageInitializer extends BaseClass {
 		instrumentsPageElements  = new InstrumentsPageElements();
 		fileAndFoldersPageElements = new FileAndFoldersPageElements();
 		instrumentControlPageElements = new InstrumentControlPageElements();
+		recurringElemets = new RecurringElemets();
 	}
 }

@@ -1,128 +1,13 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("file:src/test/resources/features/ConfigureInstrumentAgilentN1914A.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("file:src/test/resources/features/ConfigureInstrumentControl.feature");
 formatter.feature({
-  "name": "ConfigureInstrumentAgilentN1914A",
+  "name": "Configure Instrument Control",
   "description": "",
   "keyword": "Feature"
 });
-formatter.scenarioOutline({
-  "name": "System instrument test part two (Agilent N1914A)",
-  "description": "",
-  "keyword": "Scenario Outline",
-  "tags": [
-    {
-      "name": "@Progression"
-    }
-  ]
-});
-formatter.step({
-  "name": "Open METCAL Runtime and enter valid login and password for MC user",
-  "keyword": "Given "
-});
-formatter.step({
-  "name": "Click on the LogIn button",
-  "keyword": "Then "
-});
-formatter.step({
-  "name": "Add Agilent \"N1914A\", assert \"\u003cFSC\u003e\" and verify Asset info button disabled",
-  "keyword": "And "
-});
-formatter.step({
-  "name": "Add barcode \"\u003cBarcode\u003e\" and Verify Asset Info button is enabled",
-  "keyword": "And "
-});
-formatter.step({
-  "name": "Click Help button and verify help page is opened assert \"\u003cHeader\u003e\" and click ok button",
-  "keyword": "Then "
-});
-formatter.step({
-  "name": "Verify Channel A and Channel B barcode fields are disabled",
-  "keyword": "Then "
-});
-formatter.step({
-  "name": "Verify Channel C and Channel D barcode fields are disabled",
-  "keyword": "Then "
-});
-formatter.step({
-  "name": "Verify Power Sensors Drop Down is enabled for Chanel A and Chanel B",
-  "keyword": "And "
-});
-formatter.step({
-  "name": "Verify Power Sensors Drop Down is disabled for Chanel C and Chanel D",
-  "keyword": "And "
-});
-formatter.step({
-  "name": "select USB Ports check box",
-  "keyword": "And "
-});
-formatter.step({
-  "name": "Verify Power Sensors Drop Down is enabled for Chanel C and Chanel D",
-  "keyword": "And "
-});
-formatter.step({
-  "name": "Verify + buttons for all channels are enabled and - buttons for all channels are disabled",
-  "keyword": "Then "
-});
-formatter.step({
-  "name": "Verify Barcode fields for all channels are disabled and Asset Info buttons are disabled for all channels Barcode fields",
-  "keyword": "Then "
-});
-formatter.step({
-  "name": "Select any power sensor for Channel A and Verify Barcode field for that sensor is enabled",
-  "keyword": "And "
-});
-formatter.step({
-  "name": "Enter barcode for that sensor and Verify corresponding Asset Info button is enabled",
-  "keyword": "Then "
-});
-formatter.step({
-  "name": "Select all available power sensors for Channel A with their barcodes and Verify power sensor dropdowns are disabled for Channel B, C and D",
-  "keyword": "Then "
-});
-formatter.step({
-  "name": "Delete one power sensor from Channel A by clicking minus button and Verify power sensor dropdowns are enabled for all channels",
-  "keyword": "And "
-});
-formatter.step({
-  "name": "Click ok button",
-  "keyword": "Then "
-});
-formatter.step({
-  "name": "Verify \"Agilent N1914A\" is present on the instrument page",
-  "keyword": "Then "
-});
-formatter.step({
-  "name": "Click on the instrument and click Delete button",
-  "keyword": "And "
-});
-formatter.step({
-  "name": "click Yes button on the Confirm window and verify instrument \"Agilent N1914A\" succesfully deleted",
-  "keyword": "Then "
-});
-formatter.examples({
-  "name": "",
-  "description": "",
-  "keyword": "Examples",
-  "rows": [
-    {
-      "cells": [
-        "FSC",
-        "Barcode",
-        "Header"
-      ]
-    },
-    {
-      "cells": [
-        "IEEE, EPM, SCPI",
-        "TestBarcode",
-        "System Instrument Dialog"
-      ]
-    }
-  ]
-});
 formatter.scenario({
-  "name": "System instrument test part two (Agilent N1914A)",
+  "name": "Configure Instrument Control sliders",
   "description": "",
-  "keyword": "Scenario Outline",
+  "keyword": "Scenario",
   "tags": [
     {
       "name": "@Progression"
@@ -153,196 +38,786 @@ formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "Add Agilent \"N1914A\", assert \"IEEE, EPM, SCPI\" and verify Asset info button disabled",
+  "name": "Select Configure then Instrument Control section and verify APPLY and DISCARD buttons are disabled",
+  "keyword": "When "
+});
+formatter.match({
+  "location": "stepDefinitions.ConfigureInstrumentControlSteps.select_Configure_then_Instrument_Control_section_and_verify_APPLY_and_DISCARD_buttons_are_disabled()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Move IEEE-488 FIND LISTENER Delay slider to the 300 ms value",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "stepDefinitions.ConfigureInstrumentControlSteps.move_IEEE_FIND_LISTENER_Delay_slider_to_the_ms_value(java.lang.Integer,java.lang.Integer)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Verify Yellow banner is popUp",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "stepDefinitions.ConfigureInstrumentControlSteps.verify_Yellow_banner_is_popUp()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Verify APPLY and DISCARD button is enabled",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepDefinitions.ConfigureAgilentN1914Atest.add_Agilent_assert_and_verify_Asset_info_button_disabled(java.lang.String,java.lang.String)"
+  "location": "stepDefinitions.ConfigureInstrumentControlSteps.verify_APPLY_and_DISCARD_button_is_enabled()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "Add barcode \"TestBarcode\" and Verify Asset Info button is enabled",
+  "name": "Verify value is changed for IEEE-488 FIND LISTENER Delay slider",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "stepDefinitions.ConfigureInstrumentControlSteps.verify_value_is_changed_for_IEEE_FIND_LISTENER_Delay_slider(java.lang.Integer)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Click DISCARD button AND assert confirmation message \"Are you sure you want to discard your changes?\"",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "stepDefinitions.ConfigureInstrumentControlSteps.click_DISCARD_button_AND_assert_confirmation_message(java.lang.String)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Click Yes on confirmation message and assert APPLY and Discard button is disabled",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepDefinitions.ConfigureAgilentN1914Atest.add_barcode_and_Verify_Asset_Info_button_is_enabled(java.lang.String)"
+  "location": "stepDefinitions.ConfigureInstrumentControlSteps.click_Yes_on_confirmation_message_and_assert_APPLY_and_Discard_button_is_disabled()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "Click Help button and verify help page is opened assert \"System Instrument Dialog\" and click ok button",
+  "name": "Move IEEE488 FIND LISTENER Delay slider to the 400 ms value",
   "keyword": "Then "
 });
 formatter.match({
-  "location": "stepDefinitions.ConfigureAgilentN1914Atest.click_Help_button_and_verify_help_page_is_opened_assert_and_click_ok_button(java.lang.String)"
+  "location": "stepDefinitions.ConfigureInstrumentControlSteps.move_IEEE488_FIND_LISTENER_Delay_slider_to_the_ms_value(java.lang.Integer)"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "Verify Channel A and Channel B barcode fields are disabled",
+  "name": "Verify Yellow banner is popUp",
   "keyword": "Then "
 });
 formatter.match({
-  "location": "stepDefinitions.ConfigureAgilentN1914Atest.verify_Channel_A_and_Channel_B_barcode_fields_are_disabled()"
+  "location": "stepDefinitions.ConfigureInstrumentControlSteps.verify_Yellow_banner_is_popUp()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "Verify Channel C and Channel D barcode fields are disabled",
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "stepDefinitions.ConfigureAgilentN1914Atest.verify_Channel_C_and_Channel_D_barcode_fields_are_disabled()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "Verify Power Sensors Drop Down is enabled for Chanel A and Chanel B",
+  "name": "Verify APPLY and DISCARD button is enabled",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepDefinitions.ConfigureAgilentN1914Atest.verify_Power_Sensors_Drop_Down_is_enabled_for_Chanel_A_and_Chanel_B()"
+  "location": "stepDefinitions.ConfigureInstrumentControlSteps.verify_APPLY_and_DISCARD_button_is_enabled()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "Verify Power Sensors Drop Down is disabled for Chanel C and Chanel D",
+  "name": "Click APPLY button",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepDefinitions.ConfigureAgilentN1914Atest.verify_Power_Sensors_Drop_Down_is_disabled_for_Chanel_C_and_Chanel_D()"
+  "location": "stepDefinitions.ConfigureInstrumentControlSteps.click_APPLY_button()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "select USB Ports check box",
+  "name": "Verify APPLY and DISCARD button is disabled",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "stepDefinitions.ConfigureInstrumentControlSteps.verify_APPLY_and_DISCARD_button_is_disabled()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Verify value is changed for IEEE-488 FIND LISTENER Delay slider",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "stepDefinitions.ConfigureInstrumentControlSteps.verify_value_is_changed_for_IEEE_FIND_LISTENER_Delay_slider(java.lang.Integer)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Change location of the IEEE-488 FIND LISTENER Delay slider to original and click APPLY",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepDefinitions.ConfigureAgilentN1914Atest.select_USB_Ports_check_box()"
+  "location": "stepDefinitions.ConfigureInstrumentControlSteps.change_location_of_the_IEEE_FIND_LISTENER_Delay_slider_to_original_and_click_APPLY(java.lang.Integer)"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "Verify Power Sensors Drop Down is enabled for Chanel C and Chanel D",
+  "name": "Move IEEE2/SCPI Query Delay slider to the 420 ms value",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "stepDefinitions.ConfigureInstrumentControlSteps.move_IEEE2_SCPI_Query_Delay_slider_to_the_ms_value(java.lang.Integer)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Verify Yellow banner is popUp",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "stepDefinitions.ConfigureInstrumentControlSteps.verify_Yellow_banner_is_popUp()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Verify APPLY and DISCARD button is enabled",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepDefinitions.ConfigureAgilentN1914Atest.verify_Power_Sensors_Drop_Down_is_enabled_for_Chanel_C_and_Chanel_D()"
+  "location": "stepDefinitions.ConfigureInstrumentControlSteps.verify_APPLY_and_DISCARD_button_is_enabled()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "Verify + buttons for all channels are enabled and - buttons for all channels are disabled",
+  "name": "Verify value is changed for IEEE2/SCPI Query Delay slider",
   "keyword": "Then "
 });
 formatter.match({
-  "location": "stepDefinitions.ConfigureAgilentN1914Atest.verify_buttons_for_all_channels_are_enabled_and_buttons_for_all_channels_are_disabled()"
+  "location": "stepDefinitions.ConfigureInstrumentControlSteps.verify_value_is_changed_for_IEEE2_SCPI_Query_Delay_slider()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "Verify Barcode fields for all channels are disabled and Asset Info buttons are disabled for all channels Barcode fields",
+  "name": "Click DISCARD button AND assert confirmation message \"Are you sure you want to discard your changes?\"",
   "keyword": "Then "
 });
 formatter.match({
-  "location": "stepDefinitions.ConfigureAgilentN1914Atest.verify_Barcode_fields_for_all_channels_are_disabled_and_Asset_Info_buttons_are_disabled_for_all_channels_Barcode_fields()"
+  "location": "stepDefinitions.ConfigureInstrumentControlSteps.click_DISCARD_button_AND_assert_confirmation_message(java.lang.String)"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "Select any power sensor for Channel A and Verify Barcode field for that sensor is enabled",
+  "name": "Click Yes on confirmation message and assert APPLY and Discard button is disabled",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepDefinitions.ConfigureAgilentN1914Atest.select_any_power_sensor_for_Channel_A_and_Verify_Barcode_field_for_that_sensor_is_enabled()"
+  "location": "stepDefinitions.ConfigureInstrumentControlSteps.click_Yes_on_confirmation_message_and_assert_APPLY_and_Discard_button_is_disabled()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "Enter barcode for that sensor and Verify corresponding Asset Info button is enabled",
+  "name": "Move IEEE2SCPI Query Delay slider to the 520 ms value",
   "keyword": "Then "
 });
 formatter.match({
-  "location": "stepDefinitions.ConfigureAgilentN1914Atest.enter_barcode_for_that_sensor_and_Verify_corresponding_Asset_Info_button_is_enabled()"
+  "location": "stepDefinitions.ConfigureInstrumentControlSteps.move_IEEE2SCPI_Query_Delay_slider_to_the_ms_value(java.lang.Integer)"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "Select all available power sensors for Channel A with their barcodes and Verify power sensor dropdowns are disabled for Channel B, C and D",
+  "name": "Verify Yellow banner is popUp",
   "keyword": "Then "
 });
 formatter.match({
-  "location": "stepDefinitions.ConfigureAgilentN1914Atest.select_all_available_power_sensors_for_Channel_A_with_their_barcodes_and_Verify_power_sensor_dropdowns_are_disabled_for_Channel_B_C_and_D()"
+  "location": "stepDefinitions.ConfigureInstrumentControlSteps.verify_Yellow_banner_is_popUp()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "Delete one power sensor from Channel A by clicking minus button and Verify power sensor dropdowns are enabled for all channels",
+  "name": "Verify APPLY and DISCARD button is enabled",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepDefinitions.ConfigureAgilentN1914Atest.delete_one_power_sensor_from_Channel_A_by_clicking_minus_button_and_Verify_power_sensor_dropdowns_are_enabled_for_all_channels()"
+  "location": "stepDefinitions.ConfigureInstrumentControlSteps.verify_APPLY_and_DISCARD_button_is_enabled()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "Click ok button",
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "stepDefinitions.ConfigureAgilentN1914Atest.click_ok_button()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "Verify \"Agilent N1914A\" is present on the instrument page",
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "stepDefinitions.ConfigureAgilentN1914Atest.verify_is_present_on_the_instrument_page(java.lang.String)"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "Click on the instrument and click Delete button",
+  "name": "Click APPLY button",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepDefinitions.ConfigureAgilentN1914Atest.click_on_the_instrument_and_click_Delete_button()"
+  "location": "stepDefinitions.ConfigureInstrumentControlSteps.click_APPLY_button()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "click Yes button on the Confirm window and verify instrument \"Agilent N1914A\" succesfully deleted",
+  "name": "Verify APPLY and DISCARD button is disabled",
   "keyword": "Then "
 });
 formatter.match({
-  "location": "stepDefinitions.ConfigureAgilentN1914Atest.click_Yes_button_on_the_Confirm_window_and_verify_instrument_succesfully_deleted(java.lang.String)"
+  "location": "stepDefinitions.ConfigureInstrumentControlSteps.verify_APPLY_and_DISCARD_button_is_disabled()"
 });
 formatter.result({
   "status": "passed"
 });
-formatter.embedding("image/png", "embedded0.png", "System instrument test part two (Agilent N1914A)");
+formatter.step({
+  "name": "Verify value is changed for IEEE2/SCPI Query Delay slider",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "stepDefinitions.ConfigureInstrumentControlSteps.verify_value_is_changed_for_IEEE2_SCPI_Query_Delay_slider()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Change location of the IEEE2/SCPI Query Delay slider to original and click APPLY",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepDefinitions.ConfigureInstrumentControlSteps.change_location_of_the_IEEE2_SCPI_Query_Delay_slider_to_original_and_click_APPLY()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Move 8902/803 Serial Poll Slow slider to the 800 ms value",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "stepDefinitions.ConfigureInstrumentControlSteps.move_Serial_Poll_Slow_slider_to_the_ms_value(java.lang.Integer,java.lang.Integer,java.lang.Integer)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Verify Yellow banner is popUp",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "stepDefinitions.ConfigureInstrumentControlSteps.verify_Yellow_banner_is_popUp()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Verify APPLY and DISCARD button is enabled",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepDefinitions.ConfigureInstrumentControlSteps.verify_APPLY_and_DISCARD_button_is_enabled()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Verify value is changed for 8902/803 Serial Poll Slow slider",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "stepDefinitions.ConfigureInstrumentControlSteps.verify_value_is_changed_for_Serial_Poll_Slow_slider(java.lang.Integer,java.lang.Integer)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Click DISCARD button AND assert confirmation message \"Are you sure you want to discard your changes?\"",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "stepDefinitions.ConfigureInstrumentControlSteps.click_DISCARD_button_AND_assert_confirmation_message(java.lang.String)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Click Yes on confirmation message and assert APPLY and Discard button is disabled",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepDefinitions.ConfigureInstrumentControlSteps.click_Yes_on_confirmation_message_and_assert_APPLY_and_Discard_button_is_disabled()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Move 8902/803_Serial Poll Slow slider to the 900 ms value",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "stepDefinitions.ConfigureInstrumentControlSteps.move__Serial_Poll_Slow_slider_to_the_ms_value(java.lang.Integer,java.lang.Integer,java.lang.Integer)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Verify Yellow banner is popUp",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "stepDefinitions.ConfigureInstrumentControlSteps.verify_Yellow_banner_is_popUp()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Verify APPLY and DISCARD button is enabled",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepDefinitions.ConfigureInstrumentControlSteps.verify_APPLY_and_DISCARD_button_is_enabled()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Click APPLY button",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepDefinitions.ConfigureInstrumentControlSteps.click_APPLY_button()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Verify APPLY and DISCARD button is disabled",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "stepDefinitions.ConfigureInstrumentControlSteps.verify_APPLY_and_DISCARD_button_is_disabled()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Verify value is changed for 8902/803 Serial Poll Slow slider",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "stepDefinitions.ConfigureInstrumentControlSteps.verify_value_is_changed_for_Serial_Poll_Slow_slider(java.lang.Integer,java.lang.Integer)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Change location of the 8902/803 Serial Poll Slow slider to original and click APPLY",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepDefinitions.ConfigureInstrumentControlSteps.change_location_of_the_Serial_Poll_Slow_slider_to_original_and_click_APPLY(java.lang.Integer,java.lang.Integer)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Move Pre-serial Poll Delay slider to the 300 ms value",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "stepDefinitions.ConfigureInstrumentControlSteps.move_Pre_serial_Poll_Delay_slider_to_the_ms_value(java.lang.Integer)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Verify Yellow banner is popUp",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "stepDefinitions.ConfigureInstrumentControlSteps.verify_Yellow_banner_is_popUp()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Verify APPLY and DISCARD button is enabled",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepDefinitions.ConfigureInstrumentControlSteps.verify_APPLY_and_DISCARD_button_is_enabled()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Verify value is changed for Pre-serial Poll Delay slider",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "stepDefinitions.ConfigureInstrumentControlSteps.verify_value_is_changed_for_Pre_serial_Poll_Delay_slider()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Click DISCARD button AND assert confirmation message \"Are you sure you want to discard your changes?\"",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "stepDefinitions.ConfigureInstrumentControlSteps.click_DISCARD_button_AND_assert_confirmation_message(java.lang.String)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Click Yes on confirmation message and assert APPLY and Discard button is disabled",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepDefinitions.ConfigureInstrumentControlSteps.click_Yes_on_confirmation_message_and_assert_APPLY_and_Discard_button_is_disabled()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Move PreSerial Poll Delay slider to the 400 ms value",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "stepDefinitions.ConfigureInstrumentControlSteps.move_PreSerial_Poll_Delay_slider_to_the_ms_value(java.lang.Integer)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Verify APPLY and DISCARD button is enabled",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepDefinitions.ConfigureInstrumentControlSteps.verify_APPLY_and_DISCARD_button_is_enabled()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Click APPLY button",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepDefinitions.ConfigureInstrumentControlSteps.click_APPLY_button()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Verify APPLY and DISCARD button is disabled",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "stepDefinitions.ConfigureInstrumentControlSteps.verify_APPLY_and_DISCARD_button_is_disabled()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Verify value is changed for Pre-serial Poll Delay slider",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "stepDefinitions.ConfigureInstrumentControlSteps.verify_value_is_changed_for_Pre_serial_Poll_Delay_slider()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Change location of the Pre-serial Poll Delay to original and click APPLY",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepDefinitions.ConfigureInstrumentControlSteps.change_location_of_the_Pre_serial_Poll_Delay_to_original_and_click_APPLY()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Move Post-serial Poll Delay slider to the 300 ms value",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "stepDefinitions.ConfigureInstrumentControlSteps.move_Post_serial_Poll_Delay_slider_to_the_ms_value(java.lang.Integer)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Verify Yellow banner is popUp",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "stepDefinitions.ConfigureInstrumentControlSteps.verify_Yellow_banner_is_popUp()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Verify APPLY and DISCARD button is enabled",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepDefinitions.ConfigureInstrumentControlSteps.verify_APPLY_and_DISCARD_button_is_enabled()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Verify value is changed for Post-serial Poll Delay slider",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "stepDefinitions.ConfigureInstrumentControlSteps.verify_value_is_changed_for_Post_serial_Poll_Delay_slider()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Click DISCARD button AND assert confirmation message \"Are you sure you want to discard your changes?\"",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "stepDefinitions.ConfigureInstrumentControlSteps.click_DISCARD_button_AND_assert_confirmation_message(java.lang.String)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Click Yes on confirmation message and assert APPLY and Discard button is disabled",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepDefinitions.ConfigureInstrumentControlSteps.click_Yes_on_confirmation_message_and_assert_APPLY_and_Discard_button_is_disabled()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Move PostSerial Poll Delay slider to the 400 ms value",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "stepDefinitions.ConfigureInstrumentControlSteps.move_PostSerial_Poll_Delay_slider_to_the_ms_value(java.lang.Integer)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Verify Yellow banner is popUp",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "stepDefinitions.ConfigureInstrumentControlSteps.verify_Yellow_banner_is_popUp()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Verify APPLY and DISCARD button is enabled",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepDefinitions.ConfigureInstrumentControlSteps.verify_APPLY_and_DISCARD_button_is_enabled()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Click APPLY button",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepDefinitions.ConfigureInstrumentControlSteps.click_APPLY_button()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Verify APPLY and DISCARD button is disabled",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "stepDefinitions.ConfigureInstrumentControlSteps.verify_APPLY_and_DISCARD_button_is_disabled()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Verify value is changed for Post-serial Poll Delay slider",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "stepDefinitions.ConfigureInstrumentControlSteps.verify_value_is_changed_for_Post_serial_Poll_Delay_slider()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Change location of the Post-serial Poll Delay slider to original and click APPLY",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepDefinitions.ConfigureInstrumentControlSteps.change_location_of_the_Post_serial_Poll_Delay_slider_to_original_and_click_APPLY()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Move Serial Poll Retries slider to the 30ms value",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "stepDefinitions.ConfigureInstrumentControlSteps.move_Serial_Poll_Retries_slider_to_the_30ms_value()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Verify Yellow banner is popUp",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "stepDefinitions.ConfigureInstrumentControlSteps.verify_Yellow_banner_is_popUp()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Verify APPLY and DISCARD button is enabled",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepDefinitions.ConfigureInstrumentControlSteps.verify_APPLY_and_DISCARD_button_is_enabled()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Verify value is changed for Serial Poll Retries slider",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "stepDefinitions.ConfigureInstrumentControlSteps.verify_value_is_changed_for_Serial_Poll_Retries_slider()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Click DISCARD button AND assert confirmation message \"Are you sure you want to discard your changes?\"",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "stepDefinitions.ConfigureInstrumentControlSteps.click_DISCARD_button_AND_assert_confirmation_message(java.lang.String)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Click Yes on confirmation message and assert APPLY and Discard button is disabled",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepDefinitions.ConfigureInstrumentControlSteps.click_Yes_on_confirmation_message_and_assert_APPLY_and_Discard_button_is_disabled()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Move SerialPoll Retries slider to the 40ms value",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "stepDefinitions.ConfigureInstrumentControlSteps.move_SerialPoll_Retries_slider_to_the_40ms_value()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Verify Yellow banner is popUp",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "stepDefinitions.ConfigureInstrumentControlSteps.verify_Yellow_banner_is_popUp()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Verify APPLY and DISCARD button is enabled",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepDefinitions.ConfigureInstrumentControlSteps.verify_APPLY_and_DISCARD_button_is_enabled()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Click APPLY button",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepDefinitions.ConfigureInstrumentControlSteps.click_APPLY_button()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Verify APPLY and DISCARD button is disabled",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "stepDefinitions.ConfigureInstrumentControlSteps.verify_APPLY_and_DISCARD_button_is_disabled()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Verify value is changed for Serial Poll Retries slider",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "stepDefinitions.ConfigureInstrumentControlSteps.verify_value_is_changed_for_Serial_Poll_Retries_slider()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Change location of the Serial Poll Retries to original and click APPLY",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepDefinitions.ConfigureInstrumentControlSteps.change_location_of_the_Serial_Poll_Retries_to_original_and_click_APPLY()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.embedding("image/png", "embedded0.png", "Configure Instrument Control sliders");
 formatter.after({
   "status": "passed"
 });
