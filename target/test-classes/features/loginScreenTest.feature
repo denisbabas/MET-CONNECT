@@ -26,7 +26,7 @@ Feature: Login screen tests
       | admin! | E278:  User name is not valid: Database login failed. |
       | .admin | E278:  User name is not valid: Database login failed. |
 
-  @Smoke
+  @Smoke 
   Scenario Outline: Login with invalid password
     Given Open METCAL Runtime and enter valid login
     When Enter invalid "<Password>"
@@ -44,13 +44,14 @@ Feature: Login screen tests
   Scenario Outline: Login with invalid login and password
     Given Open METCAL Runtime and enter invalid "<Login>"
     When Enter invalid "<Password>"
+    Then Click on the LogIn button
     Then Verify Invalid setting "<Error>" message is displayed
-      | Login | Password | Error                                          |
-      | mc!   | mc!      | User name is not valid: Database login failed. |
+
+    Examples: 
+      | Login | Password | Error                                                 |
+      | mc!   | mc!      | E278:  User name is not valid: Database login failed. |
 
   @Smoke
   Scenario: Verify help button on login page work properly and shows proper topic
     Given Open METCAL Runtime and click Help button
     Then Verify header "MET/CONNECT Overview" on help page is shows for the user
-
- 

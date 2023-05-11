@@ -2,7 +2,7 @@
 Feature: Configure Instrument Control
 
   @Smoke
-  Scenario: Configure Instrument Control Drop downs 
+  Scenario: Configure Instrument Control Drop downs
     Given Open METCAL Runtime and enter valid login and password for MC user
     Then Click on the LogIn button
     When Select Configure then Instrument Control section and verify APPLY and DISCARD buttons are disabled
@@ -14,7 +14,6 @@ Feature: Configure Instrument Control
     And Select "COM2" for Default RS232 Port and verify APPLY and DISCARD buttons are enabled then click APPLY button
     And Assert APPLY and Discard button is disabled and default part is "cmboDefaultRS232Port:COM2"
     Then Change Default RS232 Port on "cmboDefaultRS232Port:None (Default)"
- 
     Then Select "1" for IEEE-488 Num. Boards
     And Verify APPLY and DISCARD button is enabled
     Then Verify Yellow banner is popUp
@@ -23,37 +22,33 @@ Feature: Configure Instrument Control
     Then Verify numbers boards is "cmboIEEENumBoards:None (Default)"
     Then Select "1" for IEEE-488 Num. Boards
     And Verify APPLY and DISCARD button is enabled
-      Then Verify Yellow banner is popUp
+    Then Verify Yellow banner is popUp
     And Click APPLY button
     Then Verify APPLY and DISCARD button is disabled
     Then Verify numbers boards is "cmboIEEENumBoards:1"
     And Change number boards to None and click APPLY
-    
-    
     Then Select "Clear" for IEEE-488 Port0 SRQ  and assert "cmboIEEEPort0SRQ:Clear"
     And Verify APPLY and DISCARD button is enabled
-      Then Verify Yellow banner is popUp
+    Then Verify Yellow banner is popUp
     Then Click DISCARD button AND assert confirmation message "Are you sure you want to discard your changes?"
     And Click Yes on confirmation message and assert APPLY and Discard button is disabled
     Then Assert IEEE-488 Port 0 SRQ is "cmboIEEEPort0SRQ:Prompt (Default)"
     Then Select "Error" for IEEE488 Port0 SRQ and assert "cmboIEEEPort0SRQ:Error"
     And Verify APPLY and DISCARD button is enabled
-      Then Verify Yellow banner is popUp
+    Then Verify Yellow banner is popUp
     And Click APPLY button
-   Then Assert that IEEE-488 Port 0 SRQ is "cmboIEEEPort0SRQ:Error"
+    Then Assert that IEEE-488 Port 0 SRQ is "cmboIEEEPort0SRQ:Error"
     Then Change IEEE-488 Port 0 SRQ to default value
     Then Select "Clear" for IEEE-488 Port1 SRQ and assert "cmboIEEEPort1SRQ:Error"
     And Verify APPLY and DISCARD button is enabled
-      Then Verify Yellow banner is popUp
+    Then Verify Yellow banner is popUp
     And Click APPLY button
     Then Verify APPLY and DISCARD button is disabled
     Then Verify "cmboIEEEPort1SRQ:Error" is selected for IEEE-488 Port1 SRQ
     Then Change Port1 to "Prompt" and click APPLY
-    
-    
-    
-    @Progression
-    Scenario: Configure Instrument Control sliders
+
+  @Smoke
+  Scenario: Configure Instrument Control sliders
     Given Open METCAL Runtime and enter valid login and password for MC user
     Then Click on the LogIn button
     When Select Configure then Instrument Control section and verify APPLY and DISCARD buttons are disabled
@@ -139,5 +134,3 @@ Feature: Configure Instrument Control
     Then Verify APPLY and DISCARD button is disabled
     Then Verify value is changed for Serial Poll Retries slider
     And Change location of the Serial Poll Retries to original and click APPLY
-    
-    

@@ -8,6 +8,10 @@ import io.cucumber.java.en.When;
 import utils.CommonMethods;
 
 public class ConfigureInstrumentControlSteps extends CommonMethods {
+	
+	/**
+	 * Feature1 start
+	 */
 	@When("Select Configure then Instrument Control section and verify APPLY and DISCARD buttons are disabled")
 	public void select_Configure_then_Instrument_Control_section_and_verify_APPLY_and_DISCARD_buttons_are_disabled() {
 		CommonMethods.setUpPageElements.configureButton.click();
@@ -96,6 +100,7 @@ public class ConfigureInstrumentControlSteps extends CommonMethods {
 		Assert.assertTrue(setUpPageElements.applyButton.isEnabled());
 
 	}
+	
 
 	@Then("Verify numbers boards is {string}")
 	public void verify_numbers_boards_is(String string) {
@@ -179,8 +184,9 @@ public class ConfigureInstrumentControlSteps extends CommonMethods {
 		instrumentControlPageElements.defaultValueForEEE488Port1SRQ.click();
 		setUpPageElements.applyButton.click();
 	}
-//feature2
-//////////////////////////////////////////////////////
+	/**
+	 * Feature2 start
+	 */
 
 	String sliderValue;
 
@@ -372,7 +378,9 @@ public class ConfigureInstrumentControlSteps extends CommonMethods {
 
 
 
-
+	/**
+	 * Feature2 end
+	 */
 
 
 

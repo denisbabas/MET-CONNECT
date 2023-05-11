@@ -35,8 +35,6 @@ public class BaseClass {
 	    WiniumDriverService service = new WiniumDriverService.Builder().usingDriverExecutable(driverPath).usingPort(9999).buildDesktopService();
 	        service.start();
 	        driver = new WiniumDriver(service, options);
-	        
-	       // wait = new WebDriverWait(driver, Constants.IMPLICIT_WAIT_TIME);
 	        PageInitializer.initializePageObjects();
 	    }
 		

@@ -60,6 +60,7 @@ public class LoginScreenTestDefinitions extends CommonMethods{
 
 	@Then("Verify header {string} on help page is shows for the user")
 	public void verify_header_on_help_page_is_shows_for_the_user(String string) {
+		
 	   Assert.assertEquals(string,  loginPageElements.headerFromHelpPage.getAttribute("Name"));
 	}
 

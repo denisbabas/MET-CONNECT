@@ -2,7 +2,7 @@ package testBase;
 
 import pages.ConfugurePageElements;
 import pages.FileAndFoldersPageElements;
-import pages.InstrumentConfigurationPageElements;
+import pages.InstrumentConfigurationPageElementsOne;
 import pages.InstrumentControlPageElements;
 import pages.InstrumentsPageElements;
 import pages.LoginPageElements;
@@ -26,7 +26,7 @@ public class PageInitializer extends BaseClass {
 	protected static SetUpPageElements setUpPageElements;
 	protected static SelectProcedureExecutablePageElements selectProcedureExecutablePageElements;
 	protected static RunPageElements runPageElements;
-    protected static InstrumentConfigurationPageElements instrumentConfigurationPageElements;
+    protected static InstrumentConfigurationPageElementsOne instrumentConfigurationPageElementsOne;
 	protected static WorkstationConfigurationPageElements workstationConfigurationPageElements;
 	protected static SimulationModePageElements simulationModePageElements;
 	protected static SafetyPageElements safetyPageElements;
@@ -45,7 +45,7 @@ public class PageInitializer extends BaseClass {
 		confugurePageElements = new ConfugurePageElements();
 		setUpPageElements = new SetUpPageElements();
 		runPageElements = new RunPageElements();
-		instrumentConfigurationPageElements = new InstrumentConfigurationPageElements();
+		instrumentConfigurationPageElementsOne = new InstrumentConfigurationPageElementsOne();
 		workstationConfigurationPageElements = new WorkstationConfigurationPageElements();
 		simulationModePageElements = new SimulationModePageElements();
 		safetyPageElements = new SafetyPageElements();

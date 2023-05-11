@@ -1,6 +1,9 @@
 package stepDefinitions;
 
+import org.junit.Assert;
+
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import utils.CommonMethods;
 import utils.ConfigsReader;
@@ -25,5 +28,11 @@ public class InvalidCredentialsSteps extends CommonMethods {
 	@When("Enter invalid {string}")
 	public void enter_invalid(String password) {
 		 CommonMethods.sendKeys(loginPageElements.passwordField, password);
+	}
+	@Then("Verify Invalid setting {string} message is displayed")
+	public void verify_Invalid_setting_message_is_displayed(String string) {
+		Assert.assertEquals( string, loginPageElements.textFromErrorWindow.getAttribute("Name"));
+		
+	
 	}
 }

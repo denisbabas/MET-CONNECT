@@ -67,8 +67,8 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 		}
 		
 		/**
-		 * This method write in to specific row using List of values if we have multiple elements in the list this method will create 
-		 * cell ++
+		 * This method write in to specific row using List of values if we have multiple 
+		 * elements in the list this method will create cell ++
 		 */
 		public static void writeStringRow(List<String> data, int rowIndex) {
 			row = sheet.createRow(rowIndex);
@@ -78,7 +78,6 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 				cell.setCellValue(value);
 			}
 		}
-		
 
 		/**
 		 * This method write List of values in the xlsx file creating for every element unique row row++

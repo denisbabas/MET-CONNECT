@@ -312,12 +312,21 @@ public class CommonMethods extends PageInitializer {
 		try {
 
 			if (element.isDisplayed()) {
-				assert false : "Element was not successfully deleted.";
+				assert false : "Element is present on a page.";
 			} else {
-				System.out.println("Element was successfully deleted.");
+				assert true;
+				System.out.println("Element was successfully deleted or not present.");
 			}
 		} catch (NoSuchElementException e) {
-			System.out.println("Element was successfully deleted.");
+			assert true;
+			System.out.println("Element was successfully deleted or not present.");
+		}
+	}
+	
+	public static void printFromTheLoop(List<WebElement> element ) {
+		for(int a = 0; a < element.size(); a++) {
+		
+			System.out.println( element.get(a) );
 		}
 	}
 
