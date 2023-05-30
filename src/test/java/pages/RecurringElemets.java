@@ -37,6 +37,9 @@ public class RecurringElemets extends BaseClass {
 	@FindBy (id = "PageUp")
 	public WebElement  pageUp;
 	
+	@FindBy (name = "MET/CAL Error")
+	public WebElement  METCALErrorMessage;
+	
 	
 	public	RecurringElemets() {
 		

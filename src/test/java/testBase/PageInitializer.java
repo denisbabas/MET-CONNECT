@@ -3,6 +3,7 @@ package testBase;
 import pages.ConfugurePageElements;
 import pages.FileAndFoldersPageElements;
 import pages.InstrumentConfigurationPageElementsOne;
+import pages.InstrumentConfigurationPageElementsTwo;
 import pages.InstrumentControlPageElements;
 import pages.InstrumentsPageElements;
 import pages.LoginPageElements;
@@ -38,6 +39,7 @@ public class PageInitializer extends BaseClass {
 	protected static FileAndFoldersPageElements fileAndFoldersPageElements;
 	protected static InstrumentControlPageElements instrumentControlPageElements;
 	protected static RecurringElemets recurringElemets;
+	protected static InstrumentConfigurationPageElementsTwo instrumentConfigurationPageElementsTwo;
 	
 	public static void initializePageObjects() {
 		selectProcedureExecutablePageElements = new SelectProcedureExecutablePageElements();
@@ -57,5 +59,6 @@ public class PageInitializer extends BaseClass {
 		fileAndFoldersPageElements = new FileAndFoldersPageElements();
 		instrumentControlPageElements = new InstrumentControlPageElements();
 		recurringElemets = new RecurringElemets();
+		instrumentConfigurationPageElementsTwo = new InstrumentConfigurationPageElementsTwo();
 	}
 }

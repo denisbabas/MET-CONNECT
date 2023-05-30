@@ -3,9 +3,14 @@ package stepDefinitions;
 import org.junit.Assert;
 
 import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import utils.CommonMethods;
 
 public class ConfigureInstrumentConfigurationSteps extends CommonMethods {
+
+	String sliderValue;
+	String sliderValueLow;
+	String sliderValueHigh;
 
 	/**
 	 * Feature1 start
@@ -114,8 +119,6 @@ public class ConfigureInstrumentConfigurationSteps extends CommonMethods {
 		recurringElemets.comboBox.get(0).click();
 		instrumentConfigurationPageElementsOne.valueBfROM8903ModuleSuffix.click();
 	}
-
-	String sliderValue;
 
 	@Then("Move 8901A\\/B Data Avail. Timeout slider to the {int} ms value")
 	public void move_8901A_B_Data_Avail_Timeout_slider_to_the_ms_value(Integer int1) {
@@ -284,5 +287,235 @@ public class ConfigureInstrumentConfigurationSteps extends CommonMethods {
 		instrumentConfigurationPageElementsOne.defaultManufacturer.click();
 
 	}
+
+	/**
+	 * Methods for the Instrument Configuration (Continued) Feature 1 9500
+	 * instrument
+	 */
+
+	@When("Select Instrument Configuration \\(Continued) section")
+	public void select_Instrument_Configuration_Continued_section() {
+		confugurePageElements.instrimentConfigurationMenuContinued.click();
+	}
+
+	@Then("click on the Near Cal Due SRQ checkbox")
+	public void click_on_the_Near_Cal_Due_SRQ_checkbox() {
+		instrumentConfigurationPageElementsTwo.nearCalDueSRQCkeckBox.click();
+	}
+
+	@Then("verify check box Near Cal Due SRQ is unchecked")
+	public void verify_check_box_Near_Cal_Due_SRQ_is_unchecked() {
+		Assert.assertFalse(instrumentConfigurationPageElementsTwo.nearCalDueSRQCkeckBox.isSelected());
+
+	}
+
+	@Then("Verify Near Cal Due SRQ checkbox is checked")
+	public void verify_Near_Cal_Due_SRQ_checkbox_is_checked() {
+		Assert.assertTrue(instrumentConfigurationPageElementsTwo.nearCalDueSRQCkeckBox.isSelected());
+	}
+
+	@Then("click on the Past Cal Due SRQ checkbox")
+	public void click_on_the_Past_Cal_Due_SRQ_checkbox() {
+		instrumentConfigurationPageElementsTwo.pastCalDueSRQCkeckBox.click();
+	}
+
+	@Then("verify check box Past Cal Due SRQ is unchecked")
+	public void verify_check_box_Past_Cal_Due_SRQ_is_unchecked() {
+		Assert.assertFalse(instrumentConfigurationPageElementsTwo.pastCalDueSRQCkeckBox.isSelected());
+
+	}
+
+	@Then("Verify Past Cal Due SRQ checkbox is checked")
+	public void verify_Past_Cal_Due_SRQ_checkbox_is_checked() {
+		Assert.assertTrue(instrumentConfigurationPageElementsTwo.pastCalDueSRQCkeckBox.isSelected());
+	}
+
+	@Then("Select Fluke for the Manufacturer DD")
+	public void select_Fluke_for_the_Manufacturer_DD() {
+		recurringElemets.comboBox.get(0).click();
+		instrumentConfigurationPageElementsTwo.flukeValueManufacturerDD.click();
+	}
+
+	@Then("verify value for Manufacturer DD is {string}")
+	public void verify_value_for_Manufacturer_DD_is(String string) {
+		Assert.assertEquals(string, instrumentConfigurationPageElementsTwo.ManufacturerDD.getAttribute("AutomationId"));
+	}
+
+	@Then("change value Manufacturer DD to blank")
+	public void change_value_Manufacturer_DD_to_blank() {
+		recurringElemets.comboBox.get(0).click();
+		instrumentConfigurationPageElementsTwo.blankValueManufacturerDD.click();
+	}
+
+	/**
+	 * Methods for the Instrument Configuration (Continued) Feature 2 N5532A/B
+	 * instrument
+	 */
+
+	@Then("click on the Enable 504Frequency Low checkbox")
+	public void click_on_the_Enable_504Frequency_Low_checkbox() {
+		instrumentConfigurationPageElementsTwo.enableCheckBox.get(0).click();
+
+	}
+
+	@Then("verify check box Enable 504Frequency is unchecked")
+	public void verify_check_box_Enable_504Frequency_is_unchecked() {
+		Assert.assertFalse(instrumentConfigurationPageElementsTwo.enableCheckBox.get(0).isSelected());
+	}
+
+	@Then("verify both sliders and DD for the 504Frequency Low and High is disabled")
+	public void verify_both_sliders_and_DD_for_the_504Frequency_Low_and_High_is_disabled() {
+		Assert.assertFalse(instrumentConfigurationPageElementsTwo.cmbo504FreqLowUnitskHz.isEnabled());
+		Assert.assertFalse(recurringElemets.thumb.get(1).isEnabled());
+		Assert.assertFalse(instrumentConfigurationPageElementsTwo.cmbo504FreqHighUnitsGHz.isEnabled());
+		Assert.assertFalse(recurringElemets.thumb.get(2).isEnabled());
+	}
+
+	@Then("Verify 504Frequency Low checked")
+	public void verify_504Frequency_Low_checked() {
+		Assert.assertTrue(instrumentConfigurationPageElementsTwo.enableCheckBox.get(0).isSelected());
+	}
+
+	
+	@Then("Move the504 Frequency Low slider to the200 ms value")
+	public void move_the504_Frequency_Low_slider_to_the200_ms_value() {
+		sliderValueLow = instrumentConfigurationPageElementsTwo.cmbo504FreqLowUnitskHz.getAttribute("Name");
+
+		recurringElemets.increaseLarge.get(0).click();
+	}
+
+	@Then("Verify value is changed for the504Frequency Low")
+	public void verify_value_is_changed_for_the504Frequency_Low() {
+		Assert.assertEquals(sliderValueLow,
+				instrumentConfigurationPageElementsTwo.cmbo504FreqLowUnitskHz.getAttribute("Name"));
+		sliderValueLow = instrumentConfigurationPageElementsTwo.cmbo504FreqLowUnitskHz.getAttribute("Name");
+
+	}
+
+	@Then("Move the504 Frequency Low slider to the300 ms value")
+	public void move_the504_Frequency_Low_slider_to_the300_ms_value() {
+
+		CommonMethods.doubleClick(recurringElemets.increaseLarge.get(0));
+	}
+
+	@Then("Change location of the504 Frequency Low  slider to original")
+	public void change_location_of_the504_Frequency_Low_slider_to_original() {
+		CommonMethods.doubleClick(recurringElemets.decreaseLarge.get(0));
+	}
+
+	@Then("Move the504 Frequency High slider to the104 ms value")
+	public void move_the504_Frequency_High_slider_to_the104_ms_value() {
+		sliderValueHigh = instrumentConfigurationPageElementsTwo.cmbo504FreqHighUnitsGHz.getAttribute("Name");
+		CommonMethods.doubleClick(recurringElemets.increaseLarge.get(1));
+
+	}
+
+	@Then("Verify value is changed for504 Frequency High slider")
+	public void verify_value_is_changed_for504_Frequency_High_slider() {
+		Assert.assertEquals(sliderValueHigh,
+				instrumentConfigurationPageElementsTwo.cmbo504FreqHighUnitsGHz.getAttribute("Name"));
+		sliderValueHigh = instrumentConfigurationPageElementsTwo.cmbo504FreqHighUnitsGHz.getAttribute("Name");
+	}
+
+	@Then("Move the504 Frequency High slider to the204 ms value")
+	public void move_the504_Frequency_High_slider_to_the204_ms_value() {
+		recurringElemets.increaseLarge.get(1).click();
+	}
+
+	@Then("Verify MET\\/CAL Error is popUp assert header  {string}")
+	public void verify_MET_CAL_Error_is_popUp_assert_header(String string) {
+		Assert.assertEquals(string, recurringElemets.METCALErrorMessage.getAttribute("Name"));
+	}
+
+	@Then("Change location of the504 Frequency High slider to original")
+	public void change_location_of_the504_Frequency_High_slider_to_original() {
+		CommonMethods.click(recurringElemets.decreaseLarge.get(1));
+	}
+	
+	
+	@Then("click on the Enable 518Frequency Low checkbox")
+	public void click_on_the_Enable_518Frequency_Low_checkbox() {
+
+		
+		instrumentConfigurationPageElementsTwo.Enable518checkBox.click();
+		}
+		
+
+	@Then("verify check box Enable 518Frequency is unchecked")
+	public void verify_check_box_Enable_518Frequency_is_unchecked() {
+		Assert.assertFalse(instrumentConfigurationPageElementsTwo.Enable518checkBox.isSelected());
+	}
+	
+
+	@Then("verify both sliders and DD for the 518Frequency Low and High is disabled")
+	public void verify_both_sliders_and_DD_for_the_518Frequency_Low_and_High_is_disabled() {
+		Assert.assertFalse(instrumentConfigurationPageElementsTwo.cmbo518FreqLowUnitsMHz.isEnabled());
+		Assert.assertFalse(recurringElemets.thumb.get(2).isEnabled());
+	    Assert.assertFalse(instrumentConfigurationPageElementsTwo.cmbo518FreqHighUnitsGHz.isEnabled());
+		Assert.assertFalse(recurringElemets.thumb.get(3).isEnabled());
+	}
+
+	@Then("Verify 518Frequency Low checked")
+	public void verify_518Frequency_Low_checked() {
+		Assert.assertTrue(instrumentConfigurationPageElementsTwo.Enable518checkBox.isSelected());
+	}
+	   
+	@Then("Move the518 Frequency Low slider to the110 ms value")
+	public void move_the518_Frequency_Low_slider_to_the110_ms_value() {
+		sliderValueLow = instrumentConfigurationPageElementsTwo.cmbo518FreqLowUnitsMHz.getAttribute("Name");
+		recurringElemets.increaseLarge.get(2).click();
+		
+	}
+
+	@Then("Verify value is changed for the518 Frequency Low")
+	public void verify_value_is_changed_for_the518_Frequency_Low() {
+		Assert.assertEquals(sliderValueLow,
+				instrumentConfigurationPageElementsTwo.cmbo518FreqLowUnitsMHz.getAttribute("Name"));
+		sliderValueLow = instrumentConfigurationPageElementsTwo.cmbo518FreqLowUnitsMHz.getAttribute("Name");
+	}
+
+	@Then("Move the518 Frequency Low slider to the210 ms value")
+	public void move_the518_Frequency_Low_slider_to_the210_ms_value() {
+		CommonMethods.doubleClick(recurringElemets.increaseLarge.get(2));
+	}
+
+	@Then("Change location of the518 Frequency Low  slider to original")
+	public void change_location_of_the518_Frequency_Low_slider_to_original() {
+		CommonMethods.doubleClick(recurringElemets.decreaseLarge.get(2));
+	}
+
+
+	@Then("Move the518 Frequency High slider to the118 ms value")
+	public void move_the518_Frequency_High_slider_to_the118_ms_value() {
+		sliderValueHigh = instrumentConfigurationPageElementsTwo.cmbo518FreqHighUnitsGHz.getAttribute("Name");
+		recurringElemets.increaseLarge.get(3).click();
+		
+	}
+
+	@Then("Verify value is changed for518 Frequency High slider")
+	public void verify_value_is_changed_for518_Frequency_High_slider() {
+		Assert.assertEquals(sliderValueHigh,
+				instrumentConfigurationPageElementsTwo.cmbo518FreqHighUnitsGHz.getAttribute("Name"));
+		sliderValueHigh = instrumentConfigurationPageElementsTwo.cmbo518FreqHighUnitsGHz.getAttribute("Name");
+	}
+
+	@Then("Move the518 Frequency High slider to the218 ms value")
+	public void move_the518_Frequency_High_slider_to_the218_ms_value() {
+		CommonMethods.doubleClick(recurringElemets.increaseLarge.get(3));
+	}
+
+
+
+		
+
+
+
+	
+	
+
+
+
+
+
 
 }

@@ -13,13 +13,16 @@ Feature: Configure - Instrument Configuration (1st tab)
     And Verify APPLY and DISCARD button is enabled
     Then Click DISCARD button AND assert confirmation message "Are you sure you want to discard your changes?"
     And Click Yes on confirmation message and assert APPLY and Discard button is disabled
+    Then Verify Yellow banner is disappear
     Then Verify 4000A checkbox is checked
     And click on the 4000A checkbox
     And Click APPLY button
     Then Verify APPLY and DISCARD button is disabled
+    Then Verify Yellow banner is disappear
     Then verify check box 4000A is unchecked
     And click on the 4000A checkbox
     And Click APPLY button
+    Then Verify Yellow banner is disappear
     #2CheckBox
     And click on the 34401A checkbox
     Then Verify Yellow banner is popUp
@@ -29,10 +32,12 @@ Feature: Configure - Instrument Configuration (1st tab)
     Then verify check box 34401A is unchecked
     And click on the 34401A checkbox
     And Click APPLY button
+    Then Verify Yellow banner is disappear
     Then Verify APPLY and DISCARD button is disabled
     Then Verify 34401A checkbox is checked
     And click on the 34401A checkbox
     And Click APPLY button
+    Then Verify Yellow banner is disappear
     #3CheckBox
     And click on the 3420A checkbox
     Then Verify Yellow banner is popUp
@@ -42,10 +47,12 @@ Feature: Configure - Instrument Configuration (1st tab)
     Then verify check box 3420A is unchecked
     And click on the 3420A checkbox
     And Click APPLY button
+    Then Verify Yellow banner is disappear
     Then Verify APPLY and DISCARD button is disabled
     Then Verify 3420A checkbox is checked
     And click on the 3420A checkbox
     And Click APPLY button
+    Then Verify Yellow banner is disappear
     #4CheckBox
     And click on the 2000SRQ checkbox
     Then Verify Yellow banner is popUp
@@ -55,6 +62,7 @@ Feature: Configure - Instrument Configuration (1st tab)
     Then verify check box 2000SRQ is unchecked
     And click on the 2000SRQ checkbox
     And Click APPLY button
+    Then Verify Yellow banner is disappear
     Then Verify APPLY and DISCARD button is disabled
     Then Verify 2000SRQ checkbox is checked
     And click on the 2000SRQ checkbox
@@ -68,10 +76,12 @@ Feature: Configure - Instrument Configuration (1st tab)
     Then verify check box 2001SRQ SDC is unchecked
     And click on the 2001SRQ SDC checkbox
     And Click APPLY button
+    Then Verify Yellow banner is disappear
     Then Verify APPLY and DISCARD button is disabled
     Then Verify 2001SRQ SDC checkbox is checked
     And click on the 2001SRQ SDC checkbox
     And Click APPLY button
+    Then Verify Yellow banner is disappear
     #1DD
     Then Select A for the 8903Model Suffix
     Then Verify Yellow banner is popUp
@@ -81,9 +91,11 @@ Feature: Configure - Instrument Configuration (1st tab)
     Then verify value for 8903Model Suffix is "<8903Default  Value>"
     Then Select A for the 8903Model Suffix
     And Click APPLY button
+    Then Verify Yellow banner is disappear
     Then verify value for 8903Model Suffix is "<8903A  Value>"
     And change value 8903Model Suffix "B (Default)"
     And Click APPLY button
+    Then Verify Yellow banner is disappear
     #1Slider
     Then Move 8901A/B Data Avail. Timeout slider to the 160 ms value
     Then Verify Yellow banner is popUp
@@ -95,10 +107,12 @@ Feature: Configure - Instrument Configuration (1st tab)
     Then Verify Yellow banner is popUp
     And Verify APPLY and DISCARD button is enabled
     And Click APPLY button
+    Then Verify Yellow banner is disappear
     Then Verify APPLY and DISCARD button is disabled
     Then Verify value is changed for 8901A/B Data Avail. Timeout
     And Change location of the 8901A/B  slider to original
     And Click APPLY button
+    Then Verify Yellow banner is disappear
 
     Examples: 
       | 8903Default  Value              | 8903A  Value          |
@@ -111,6 +125,7 @@ Feature: Configure - Instrument Configuration (1st tab)
     When Select Configure tab
     And Select Instrument Configuration section
     Then Verify APPLY and DISCARD button is disabled
+    Then Verify Yellow banner is disappear
     #CheckBox
     Then Click 525A  IEEE488 checkbox
     Then Verify Yellow banner is popUp
@@ -119,10 +134,12 @@ Feature: Configure - Instrument Configuration (1st tab)
     And Click Yes on confirmation message and assert APPLY and Discard button is disabled
     Then Click 525A  IEEE488 checkbox
     And Click APPLY button
+    Then Verify Yellow banner is disappear
     Then Verify APPLY and DISCARD button is disabled
     And Verify Terminator IEEE488 to RS232 Converter and Pressure Module Timeout is disabled
     Then Click 525A  IEEE488 checkbox
     And Click APPLY button
+    Then Verify Yellow banner is disappear
     And Verify 525EIEE488 check box is checked
     And Verify Terminator IEEE488 to RS232 Converter and Pressure Module Timeout is enabled
     Then Select CR for the Terminator IEEE488 to RS232 Converter
@@ -130,12 +147,15 @@ Feature: Configure - Instrument Configuration (1st tab)
     And Verify APPLY and DISCARD button is enabled
     Then Click DISCARD button AND assert confirmation message "Are you sure you want to discard your changes?"
     And Click Yes on confirmation message and assert APPLY and Discard button is disabled
+    Then Verify Yellow banner is disappear
     Then verify value for Terminator IEEE488 to RS232 Converter is "<Terminator IEEE488 to RS232 Converter Default>"
     Then Select LF for the Terminator IEEE488 to RS232 Converter
     And Click APPLY button
+    Then Verify Yellow banner is disappear
     Then verify value for Terminator IEEE488 to RS232 Converter "<Terminator IEEE488 to RS232 Converter Value LF>"
     And change value Terminator IEEE488 to RS232 Converter To default value
     And Click APPLY button
+    Then Verify Yellow banner is disappear
     #slider
     Then Move Pressure Module Timeout slider to the 100 ms value
     Then Verify Yellow banner is popUp
@@ -194,7 +214,6 @@ Feature: Configure - Instrument Configuration (1st tab)
     And Verify Near and Past check boxes is checked
     And Discard all changes in section
     And Click APPLY button
-    
 
     Examples: 
       | value1                | value2                     |

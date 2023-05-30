@@ -9,6 +9,22 @@ import utils.CommonMethods;
 
 public class ConfigureInstrumentControlSteps extends CommonMethods {
 	
+	
+	@When("Select Configure tab")
+	public void select_Configure_tab() {
+		CommonMethods.click(setUpPageElements.configureButton);
+	}
+	@When("Select Instrument Configuration section")
+	public void select_Instrument_Configuration_section() {
+	   CommonMethods.click(confugurePageElements.instrimentConfigurationMenu);
+	}
+	
+	@Then("Verify Yellow banner is disappear")
+	public void verify_Yellow_banner_is_disappear() {
+
+		CommonMethods.verifyElementSuccesfullyDeletedOrNotPresentOnThePage(setUpPageElements.alertBunnerAboutChanges);
+	}
+	
 	/**
 	 * Feature1 start
 	 */

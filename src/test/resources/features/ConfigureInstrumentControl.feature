@@ -10,9 +10,11 @@ Feature: Configure Instrument Control
     Then Verify Yellow banner is popUp
     And Click DISCARD button AND assert confirmation message "Are you sure you want to discard your changes?"
     Then Click Yes on confirmation message and assert APPLY and Discard button is disabled
+    Then Verify Yellow banner is disappear
     Then Assert default part for  RS232 is "cmboDefaultRS232Port:None (Default)"
     And Select "COM2" for Default RS232 Port and verify APPLY and DISCARD buttons are enabled then click APPLY button
     And Assert APPLY and Discard button is disabled and default part is "cmboDefaultRS232Port:COM2"
+    Then Verify Yellow banner is disappear
     Then Change Default RS232 Port on "cmboDefaultRS232Port:None (Default)"
     Then Select "1" for IEEE-488 Num. Boards
     And Verify APPLY and DISCARD button is enabled
@@ -24,6 +26,7 @@ Feature: Configure Instrument Control
     And Verify APPLY and DISCARD button is enabled
     Then Verify Yellow banner is popUp
     And Click APPLY button
+    Then Verify Yellow banner is disappear
     Then Verify APPLY and DISCARD button is disabled
     Then Verify numbers boards is "cmboIEEENumBoards:1"
     And Change number boards to None and click APPLY
@@ -37,15 +40,18 @@ Feature: Configure Instrument Control
     And Verify APPLY and DISCARD button is enabled
     Then Verify Yellow banner is popUp
     And Click APPLY button
+    Then Verify Yellow banner is disappear
     Then Assert that IEEE-488 Port 0 SRQ is "cmboIEEEPort0SRQ:Error"
     Then Change IEEE-488 Port 0 SRQ to default value
     Then Select "Clear" for IEEE-488 Port1 SRQ and assert "cmboIEEEPort1SRQ:Error"
     And Verify APPLY and DISCARD button is enabled
     Then Verify Yellow banner is popUp
     And Click APPLY button
+    Then Verify Yellow banner is disappear
     Then Verify APPLY and DISCARD button is disabled
     Then Verify "cmboIEEEPort1SRQ:Error" is selected for IEEE-488 Port1 SRQ
     Then Change Port1 to "Prompt" and click APPLY
+    Then Verify Yellow banner is disappear
 
   @Smoke
   Scenario: Configure Instrument Control sliders
@@ -58,13 +64,16 @@ Feature: Configure Instrument Control
     Then Verify value is changed for IEEE-488 FIND LISTENER Delay slider
     Then Click DISCARD button AND assert confirmation message "Are you sure you want to discard your changes?"
     And Click Yes on confirmation message and assert APPLY and Discard button is disabled
+    Then Verify Yellow banner is disappear
     Then Move IEEE488 FIND LISTENER Delay slider to the 400 ms value
     Then Verify Yellow banner is popUp
     And Verify APPLY and DISCARD button is enabled
     And Click APPLY button
+    Then Verify Yellow banner is disappear
     Then Verify APPLY and DISCARD button is disabled
     Then Verify value is changed for IEEE-488 FIND LISTENER Delay slider
     And Change location of the IEEE-488 FIND LISTENER Delay slider to original and click APPLY
+    Then Verify Yellow banner is disappear
     #2
     Then Move IEEE2/SCPI Query Delay slider to the 420 ms value
     Then Verify Yellow banner is popUp
@@ -79,6 +88,7 @@ Feature: Configure Instrument Control
     Then Verify APPLY and DISCARD button is disabled
     Then Verify value is changed for IEEE2/SCPI Query Delay slider
     And Change location of the IEEE2/SCPI Query Delay slider to original and click APPLY
+    Then Verify Yellow banner is disappear
     #3
     Then Move 8902/803 Serial Poll Slow slider to the 800 ms value
     Then Verify Yellow banner is popUp
@@ -86,13 +96,16 @@ Feature: Configure Instrument Control
     Then Verify value is changed for 8902/803 Serial Poll Slow slider
     Then Click DISCARD button AND assert confirmation message "Are you sure you want to discard your changes?"
     And Click Yes on confirmation message and assert APPLY and Discard button is disabled
+    Then Verify Yellow banner is disappear
     Then Move 8902/803_Serial Poll Slow slider to the 900 ms value
     Then Verify Yellow banner is popUp
     And Verify APPLY and DISCARD button is enabled
     And Click APPLY button
+    Then Verify Yellow banner is disappear
     Then Verify APPLY and DISCARD button is disabled
     Then Verify value is changed for 8902/803 Serial Poll Slow slider
     And Change location of the 8902/803 Serial Poll Slow slider to original and click APPLY
+    Then Verify Yellow banner is disappear
     #4
     Then Move Pre-serial Poll Delay slider to the 300 ms value
     Then Verify Yellow banner is popUp
@@ -100,9 +113,11 @@ Feature: Configure Instrument Control
     Then Verify value is changed for Pre-serial Poll Delay slider
     Then Click DISCARD button AND assert confirmation message "Are you sure you want to discard your changes?"
     And Click Yes on confirmation message and assert APPLY and Discard button is disabled
+    Then Verify Yellow banner is disappear
     Then Move PreSerial Poll Delay slider to the 400 ms value
     And Verify APPLY and DISCARD button is enabled
     And Click APPLY button
+    Then Verify Yellow banner is disappear
     Then Verify APPLY and DISCARD button is disabled
     Then Verify value is changed for Pre-serial Poll Delay slider
     And Change location of the Pre-serial Poll Delay to original and click APPLY
@@ -113,13 +128,16 @@ Feature: Configure Instrument Control
     Then Verify value is changed for Post-serial Poll Delay slider
     Then Click DISCARD button AND assert confirmation message "Are you sure you want to discard your changes?"
     And Click Yes on confirmation message and assert APPLY and Discard button is disabled
+    Then Verify Yellow banner is disappear
     Then Move PostSerial Poll Delay slider to the 400 ms value
     Then Verify Yellow banner is popUp
     And Verify APPLY and DISCARD button is enabled
     And Click APPLY button
+    Then Verify Yellow banner is disappear
     Then Verify APPLY and DISCARD button is disabled
     Then Verify value is changed for Post-serial Poll Delay slider
     And Change location of the Post-serial Poll Delay slider to original and click APPLY
+    Then Verify Yellow banner is disappear
     #6
     Then Move Serial Poll Retries slider to the 30ms value
     Then Verify Yellow banner is popUp
@@ -127,10 +145,13 @@ Feature: Configure Instrument Control
     Then Verify value is changed for Serial Poll Retries slider
     Then Click DISCARD button AND assert confirmation message "Are you sure you want to discard your changes?"
     And Click Yes on confirmation message and assert APPLY and Discard button is disabled
+    Then Verify Yellow banner is disappear
     Then Move SerialPoll Retries slider to the 40ms value
     Then Verify Yellow banner is popUp
     And Verify APPLY and DISCARD button is enabled
     And Click APPLY button
+    Then Verify Yellow banner is disappear
     Then Verify APPLY and DISCARD button is disabled
     Then Verify value is changed for Serial Poll Retries slider
     And Change location of the Serial Poll Retries to original and click APPLY
+    Then Verify Yellow banner is disappear

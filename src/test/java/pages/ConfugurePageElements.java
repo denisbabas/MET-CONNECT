@@ -12,6 +12,9 @@ public class ConfugurePageElements extends BaseClass {
 	@FindBy (name = "Instrument Configuration")
 	public WebElement instrimentConfigurationMenu;
 	
+	@FindBy (name = "Instrument Configuration (Continued)")
+	public WebElement instrimentConfigurationMenuContinued
+	;
 	
 	public ConfugurePageElements() {
 		
